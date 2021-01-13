@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width"/>
+
+<title>List Contacts</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a th:href="@{/}"> List of Contacts </a></li>
+
+				<li><a th:href="@{/contacts}"> List </a></li>
+
+				<li><a th:href="@{/contacts/novo}"> New </a></li>
+			</ul>
+		</nav>
+
+	</header>
+	
+	<main>
+		<section>
+			<h1>Create Contacts</h1>
+		</section>
+
+		<section>
+			<form th:action="${contact.novo} ? @{/contacts} : @{/contacts/{contact}(contact=${contact.id})}" 
+				th:object="${contact}" th:method="${contact.novo} ? post : put">
+				
+				<div th:if="${!contact.novo}">
+					<label>Code: </label> 
+					
+					<input th:field="*{id}" readonly="readonly" />
+				</div>
+				
+				<div>
+					<label>Name: </label> 
+					
+					<input th:field="*{name}" />
+				</div>
+
+				<div>
+					<label>Telephone: </label> 
+					
+					<input th:field="*{telephone}"/>
+				</div>
+
+				<div>
+					<button>Save</button>
+				</div>
+			</form>
+		</section>
+	</main>
+</body>
+
+</html>

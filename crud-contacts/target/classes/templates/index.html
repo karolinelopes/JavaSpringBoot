@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width"/>
+
+<title>List Contacts</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a th:href="@{/}"> List of Contacts </a></li>
+
+				<li><a th:href="@{/contacts}"> List </a></li>
+
+				<li><a th:href="@{/contacts/novo}"> New </a></li>
+			</ul>
+		</nav>
+	</header>
+		
+	<main>
+		<section>
+			<h1>We are Welcome!</h1>
+		</section>
+	</main>
+</body>
+
+</html>
